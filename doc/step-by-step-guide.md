@@ -68,7 +68,7 @@ Specify the Permissions. Switch your Policy editor tab to JSON
   }
  ]
 }
-
+'''
 **Lets understand what a Policy is?**
 The policy that we have created allows some Permissions. 
 It allows the user to start, stop and describe the various instances with the tag "Environment=Chrome" as it denies the ability to create and delete tags for all the instances.
