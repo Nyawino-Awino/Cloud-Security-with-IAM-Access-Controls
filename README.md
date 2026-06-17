@@ -6,6 +6,10 @@ You will work with **two EC2 instances**- one serving as the **ICT environment**
 
 This hands-on project demonstrates practical cloud security management in AWS, focusing on access controls, user roles and the principle of least privilege.
 
+## Architecture
+
+![Architecture Diagram](architecture/aws_metadata_flow.png)
+
 ## Objective.
 
 The main objective of this project is to help us implement and understand secure access management within an AWS environment. You’ll learn how to:
@@ -14,8 +18,17 @@ The main objective of this project is to help us implement and understand secure
 - Apply IAM Policies to control access based on job roles and responsibilities.
 - Apply the Principle of Least Privilege to enhance cloud security.
 
+
+##Step by Step Guide
+Refer: [Documentation](docs/deployment-guide.md)
+
 ### Step 1: Create an EC2 Instances.
+Amazon EC2(Elastic Compute Cloud) allows you to launch and manage your virtual servers - called EC2 Instances in the cloud. These instances are like computers that you can use to run applications, host websites, or perform computations.
 
-Log In to your AWS Management Console
+**Elastic Compute Cloud:**
+**Elastic**: Can easily increase or decrease the number of servers (instances) 
+depending on your workloads.
+**Compute**: provides the processing power needed to run your applications.
+**Cloud**: Available over the internet, can be accessed from anywhere.
 
-On the Console, Search for EC2
+
