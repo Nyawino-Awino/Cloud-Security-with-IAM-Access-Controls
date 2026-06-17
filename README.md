@@ -8,7 +8,7 @@ This hands-on project demonstrates practical cloud security management in AWS, f
 
 ## Architecture
 
-![Architecture Diagram](architecture/aws_metadata_flow.png)
+![Architecture Diagram](architecture/iam-architecture.png)
 
 ## Objective.
 
@@ -19,8 +19,8 @@ The main objective of this project is to help us implement and understand secure
 - Apply the Principle of Least Privilege to enhance cloud security.
 
 
-##Step by Step Guide
-Refer: [Documentation](docs/deployment-guide.md)
+## Step by Step Guide
+Refer: [Documentation](docs/step-by-step-guide.md)
 
 ### Step 1: Create an EC2 Instances.
 Amazon EC2(Elastic Compute Cloud) allows you to launch and manage your virtual servers - called EC2 Instances in the cloud. These instances are like computers that you can use to run applications, host websites, or perform computations.
