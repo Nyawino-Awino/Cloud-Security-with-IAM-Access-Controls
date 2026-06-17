@@ -22,13 +22,6 @@ The main objective of this project is to help us implement and understand secure
 ## Step by Step Guide
 Refer: [Documentation](docs/step-by-step-guide.md)
 
-### Step 1: Create an EC2 Instances.
-Amazon EC2(Elastic Compute Cloud) allows you to launch and manage your virtual servers - called EC2 Instances in the cloud. These instances are like computers that you can use to run applications, host websites, or perform computations.
 
-**Elastic Compute Cloud:**
-**Elastic**: Can easily increase or decrease the number of servers (instances) 
-depending on your workloads.
-**Compute**: provides the processing power needed to run your applications.
-**Cloud**: Available over the internet, can be accessed from anywhere.
 
 
