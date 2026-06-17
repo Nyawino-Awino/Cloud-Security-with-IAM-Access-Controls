@@ -29,3 +29,76 @@ Select the **VPC** to Launch your Instance in. Under Subnets, choose a subnet. O
 The rest remain as default, then Click **Launch Instances**.
 
 Now let’s create one more EC2 instance for the **ICT environment**.
+
+### Step 2: Set Up Permission Policy
+Create **IAM Policy** to give access to our instances.
+- On the AWS Console, Search **IAM**.
+- On the Left navigation panel, choose **Policies**.
+*A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in AWS as JSON documents. AWS supports various types of policies: permission boundaries, identity-based policies, resource-based policies, AWS Organizations service control policies (SCPs), AWS Organizations resource control policies (RCPS), Session Policies and Access Control Lists (ACLs)*
+- Choose Create **Policy**
+Specify the Permissions. Switch your Policy editor tab to JSON
+
+'''json
+{
+ "Version": "2012-10-17",
+ "Statement": [
+  {
+   "Effect": "Allow",
+   "Action": "ec2:*",
+   "Resource": "*",
+   "Condition": {
+    "StringEquals": {
+     "ec2:ResourceTag/Environment": "Chrome"
+    }
+   }
+  },
+  {
+   "Effect": "Allow",
+   "Action": "ec2:Describe*",
+   "Resource": "*"
+  },
+  {
+  
+   "Effect": "Allow",
+   "Action": [
+       "ec2:DeleteTags",
+       "ec2:CreateTags"
+       ],
+   "Resource": "*"
+  }
+ ]
+}
+
+**Lets understand what a Policy is?**
+The policy that we have created allows some Permissions. 
+It allows the user to start, stop and describe the various instances with the tag "Environment=Chrome" as it denies the ability to create and delete tags for all the instances.
+
+**Structure of a JSON Policy.**
+- Version
+‍This means 2012-10-17 is the date of the latest policy version. 
+This tells you whether the policy is up to date and if it complies with the standards.
+
+- Statement
+‍The main part or element of the policy structure.
+It defines a list of permissions.
+A statement can be a single statement or an array of statements. In an array of statements, each individual is contained in a curly brace {}.
+For multiple statement we us [{...},{...},{...}]
+
+- Effect
+‍This can have two values - either Allow or Deny - to specify whether the 
+policy allows or denies a certain action. 
+Deny has priority. 
+In the first statement, "Effect": "Allow" means this statement is trying to allow for an action.
+
+- Action
+‍Specifies actions that will be allowed or denied.
+As for the above case, "Action": "ec2:*" means all actions that you could possibly take on EC2 instances are allowed.
+
+- Resource
+D‍efines the objects that the policy apply to? Using "*" means all resources within the defined scope.
+
+- Condition Block (optional)
+‍The circumstances under which the policy is in action. 
+Conditions have 3 parts:Codition-operator, Condition-Key, Condition-Value.
+In this case, the condition is that the resource is tagged Environment - Chrome. 
+This means specifying "Resource": "*" in the line above means all resources with the Env - Chrome tag are impacted by your statement.
