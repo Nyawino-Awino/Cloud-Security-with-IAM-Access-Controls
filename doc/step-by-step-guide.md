@@ -39,6 +39,7 @@ Create **IAM Policy** to give access to our instances.
 Specify the Permissions. Switch your Policy editor tab to JSON
 
 '''json
+
 {
  "Version": "2012-10-17",
  "Statement": [
@@ -68,7 +69,9 @@ Specify the Permissions. Switch your Policy editor tab to JSON
   }
  ]
 }
+
 '''
+
 **Lets understand what a Policy is?**
 The policy that we have created allows some Permissions. 
 It allows the user to start, stop and describe the various instances with the tag "Environment=Chrome" as it denies the ability to create and delete tags for all the instances.
